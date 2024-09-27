@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar</title>
+  <style>
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+    }
+
+    .navbar-logo a {
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+    }
+
+    .navbar-toggle {
+      display: none;
+    }
+
+    .navbar-icon {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .navbar-links {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    .navbar-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .logout-button {
+      background-color: #ff4c4c;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Responsive for smaller screens */
+    @media (max-width: 768px) {
+      .navbar-links {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        padding: 20px;
+      }
+
+      .navbar-toggle:checked + .navbar-icon + .navbar-links {
+        display: flex;
+      }
+
+      .navbar-icon {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <a href="/">Events</a>
+    </div>
+    <input type="checkbox" id="navbar-toggle" class="navbar-toggle">
+    <label for="navbar-toggle" class="navbar-icon">&#9776;</label>
+
+    <ul class="navbar-links" id="navbar-links">
+      <!-- Simulating login/logout state using JavaScript -->
+    </ul>
+  </nav>
+
+  <script>
+    // Simulate whether the user is logged in or not
+    const isLoggedIn = false; // Change to true to simulate logged-in state
+
+    const navbarLinks = document.getElementById('navbar-links');
+
+    if (isLoggedIn) {
+      navbarLinks.innerHTML = `
+        <li><a href="/contact">Contact Us</a></li>
+        <li><button class="logout-button" onclick="handleLogout()">Logout</button></li>
+      `;
+    } else {
+      navbarLinks.innerHTML = `
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Register</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+        <li><a href="/about">About Us</a></li>
+      `;
+    }
+
+    // Simulate logout function
+    function handleLogout() {
+      alert('Logged out successfully!');
+    }
+  </script>
+</body>
+</html>

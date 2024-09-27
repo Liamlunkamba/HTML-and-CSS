@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events Platform</title>
+  <style>
+    .home-container {
+      background-size: cover;
+      background-position: center;
+      padding: 50px;
+      color: white;
+      text-align: center;
+      height: 100vh;
+    }
+
+    .home-header {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .home-header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    .home-header p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #7f6bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .cta-button:hover {
+      background-color: #ff4c4c;
+    }
+  </style>
+</head>
+<body>
+  <div
+    class="home-container"
+    style="
+      background-image: url('https://img.freepik.com/free-photo/people-taking-part-business-event_23-2149333686.jpg?t=st=1726199873~exp=1726203473~hmac=0053bb489e40d9221eee3d4389b2866af1eae04bf586b5b987cc1caa5994bc24&w=1380');
+    "
+  >
+    <header class="home-header">
+      <h1>Welcome to the Events Platform</h1>
+      <p>Discover and participate in amazing events happening near you.</p>
+
+      <!-- Simulate user login state -->
+      <a id="cta-button" class="cta-button" href="#">Loading...</a>
+    </header>
+  </div>
+
+  <script>
+    // Simulate user login status
+    const isLoggedIn = false; // Change to true if user is logged in
+
+    const ctaButton = document.getElementById('cta-button');
+
+    if (isLoggedIn) {
+      ctaButton.href = '/findAllEvents';
+      ctaButton.textContent = 'View Events';
+    } else {
+      ctaButton.href = '/register';
+      ctaButton.textContent = 'Register Now';
+    }
+  </script>
+</body>
+</html>

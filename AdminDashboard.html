@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div className="admin-dashboard">
+        <AdminNavbar />
+        <h1>Admin Dashboard</h1>
+    
+        <button className="new-event-button" onClick={handleNewEventClick}>
+          Create New Event
+        </button>
+        <p>Loading events...</p>
+        <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <button>
+          Info
+        </button>
+        <button>
+            Edit
+        </button>
+        <button>
+            Delete
+        </button>
+        <p>Attendees</p>
+        <p>
+            No Attendees
+        </p>
+        <h2>Confirm Delete</h2>
+                    <p>
+                      Are you sure you want to delete the event "
+                    </p>
+                    <h2>Edit Event:</h2>
+                    <h2>Create New Event</h2>
+                    <button>
+                    Yes, Delete
+                    </button>
+                     <button>
+                        Save Changes
+                     </button>
+                     <button>
+                        Create Event
+                    </button>
+                     
+</body>
+</html>
